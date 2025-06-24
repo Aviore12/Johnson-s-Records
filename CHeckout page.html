@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="images/Black And White Professional Music Logo.png">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Johnson's Records - Checkout Page</title>
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/slick.css"/>
+
+        <link href="css/tooplate-little-fashion.css" rel="stylesheet">
+        <style>
+            /* Dark Mode Styles */
+            body.dark-mode {
+                background-color: #121212;
+                color: #ffffff;
+            }
+
+            body.dark-mode a {
+                color: #bb86fc;
+            }
+
+            body.dark-mode .navbar, 
+            body.dark-mode .site-footer {
+                background-color: #1f1f1f;
+            }
+
+            body.dark-mode .btn {
+                background-color: #333333;
+                color: #ffffff;
+            }
+                        .nav-link i {
+    font-size: 1.5rem;
+    color: #ff0000;
+}
+        </style>
+            <style>
+        body {
+            background: linear-gradient(135deg, #16026e, #ffffff, #8e87ec);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            color: #ffffff; /* Optional: Set text color for contrast */
+        }
+    
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>    <style>
+        body {
+            background: linear-gradient(135deg, #16026e, #ffffff, #8e87ec);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            color: #ffffff; /* Optional: Set text color for contrast */
+        }
+    
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+    </head>
+<!--
+
+Tooplate 2127 Little Fashion
+
+https://www.tooplate.com/view/2127-little-fashion
+
+-->
+</head>
+    
+<body>
+
+    <section class="preloader">
+        <div class="spinner">
+            <span class="sk-inner-circle"></span>
+        </div>
+    </section>
+
+    <main>
+
+       <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <strong><span></span> </strong>
+                </a>
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi-house"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi-book"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html"><i class="bi-shop"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html"><i class="bi-question-circle"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi-telephone"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="sign-up.html"><i class="bi-person-plus"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="CHeckout page.html"><i class="bi-cart-check"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="sign-in.html"><i class="bi-people-circle"></i></a></li>
+                    <li class="nav-item" id="user-nav-placeholder"></li>
+                </ul>
+            </div>
+        </nav>
+      
+          <section class="album-selection section-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-12 mx-auto">
+                            <h2>Select an Album to Purchase</h2>
+                            <ul class="list-group">
+                                <!-- Album 1 -->
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span>24K Magic by Bruno Mars</span>
+                                    <button class="btn btn-primary btn-sm select-album" 
+                                            data-album-name="24K Magic" 
+                                            data-album-price="25">Select</button>
+                                </li>
+            
+                                <!-- Album 2 -->
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span>Finesse by Bruno Mars & Cardi B</span>
+                                    <button class="btn btn-primary btn-sm select-album" 
+                                            data-album-name="Finesse" 
+                                            data-album-price="30">Select</button>
+                                </li>
+            
+                                <!-- Album 3 -->
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span>Uptown Funk by Bruno Mars</span>
+                                    <button class="btn btn-primary btn-sm select-album" 
+                                            data-album-name="Uptown funk" 
+                                            data-album-price="20">Select</button>
+                                </li>
+            
+                                <!-- Album 4 -->
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span>Superstition by Stevie Wonder</span>
+                                    <button class="btn btn-primary btn-sm select-album" 
+                                            data-album-name="SuperStitions" 
+                                            data-album-price="35">Select</button>
+                                </li>
+
+                                   <!-- Album 3 -->
+                                   <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span>Living for the city by Stevie Wonder</span>
+                                    <button class="btn btn-primary btn-sm select-album" 
+                                            data-album-name="Living for the city" 
+                                            data-album-price="20">Select</button>
+                                </li>
+
+                                   <!-- Album 3 -->
+                                   <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span>As by Stevie Wonder</span>
+                                    <button class="btn btn-primary btn-sm select-album" 
+                                            data-album-name="As" 
+                                            data-album-price="20">Select</button>
+                                </li>
+
+                                   <!-- Album 3 -->
+                                   <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span>Rock Steady by Aretha Franklin</span>
+                                    <button class="btn btn-primary btn-sm select-album" 
+                                            data-album-name="Rock Steady" 
+                                            data-album-price="20">Select</button>
+                                </li>
+
+                                   <!-- Album 3 -->
+                                   <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span>Chain of fools by Aretha Franklin</span>
+                                    <button class="btn btn-primary btn-sm select-album" 
+                                            data-album-name="Chain of fools" 
+                                            data-album-price="20">Select</button>
+                                </li>
+
+                                   <!-- Album 3 -->
+                                   <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span>I say a little prayer by Aretha Franklin</span>
+                                    <button class="btn btn-primary btn-sm select-album" 
+                                            data-album-name="I say a little prayer" 
+                                            data-album-price="20">Select</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="payment-options section-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-12 mx-auto">
+                            <h2>Payment Details</h2>
+                            <form id="multi-payment-form">
+                                <!-- Selected Album Details -->
+                                <div class="mb-3">
+                                    <label for="selected-album" class="form-label">Selected Album</label>
+                                    <input type="text" class="form-control" id="selected-album" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="album-price" class="form-label">Price</label>
+                                    <input type="text" class="form-control" id="album-price" readonly>
+                                </div>
+            
+                                <!-- Credit/Debit Card -->
+                                <div class="mb-3">
+                                    <label for="cardholder-name" class="form-label">Cardholder Name</label>
+                                    <input type="text" class="form-control" id="cardholder-name" placeholder="Enter your name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="card-number" class="form-label">Card Number</label>
+                                    <input type="text" class="form-control" id="card-number" placeholder="1234 5678 9012 3456" required>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="expiry-date" class="form-label">Expiry Date</label>
+                                        <input type="text" class="form-control" id="expiry-date" placeholder="MM/YY" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="cvv" class="form-label">CVV</label>
+                                        <input type="text" class="form-control" id="cvv" placeholder="123" required>
+                                    </div>
+                                </div>
+            
+                                <!-- Submit Button -->
+                                <button type="submit" class="btn custom-btn w-100">Complete Payment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+           
+            
+            
+
+           
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-10 me-auto mb-4">
+                        <h4 class="text-white mb-3"><a href="index.html">Johnson's</a> Records</h4>
+                        <p class="copyright-text text-muted mt-lg-5 mb-4 mb-lg-0">Copyright © 2022 <strong>Johnson's Records</strong></p>
+                        <br>
+                        <p class="copyright-text">Designed by <a href="#" target="_blank">Akram Abdulle</a></p>
+                    </div>
+                    <div class="mode-toggle">
+                        <button id="theme-toggle" class="btn btn-outline-light">Switch to Dark Mode</button>
+                    </div>
+
+                    <div class="col-lg-5 col-8">
+                        <h5 class="text-white mb-3">Sitemap</h5>
+
+                        <ul class="footer-menu d-flex flex-wrap">
+                            <li class="footer-menu-item"><a href="about.html" class="footer-menu-link">About</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Products</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Privacy policy</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">FAQs</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-4">
+                        <h5 class="text-white mb-3">Social</h5>
+
+                        <ul class="social-icon">
+
+                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-skype"></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+        <!-- CART MODAL -->
+        <div class="modal fade" id="cart-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content border-0">
+                    <div class="modal-header flex-column">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-6 col-12 mt-4 mt-lg-0">
+                                <img src="images/finesse.jpg" class="img-fluid product-image" alt="">
+                            </div>
+
+                            <div class="col-lg-6 col-12 mt-3 mt-lg-0">
+                                <h3 class="modal-title" id="exampleModalLabel">24 K Magic</h3>
+
+                                <p class="product-price text-muted mt-3">$25</p>
+
+                                <p class="product-p">Quatity: <span class="ms-1">4</span></p>
+
+                                <p class="product-p">Colour: <span class="ms-1">Black</span></p>
+
+                                <p class="product-p pb-3">Size: <span class="ms-1">S/S</span></p>
+
+                                <div class="border-top mt-4 pt-3">
+                                    <p class="product-p"><strong>Total: <span id="total-price" class="ms-1">$25</span></strong></p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <div class="row w-50">
+                            <button type="button" class="btn custom-btn cart-btn ms-lg-4">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/Headroom.js"></script>
+        <script src="js/jQuery.headroom.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/custom.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const themeToggle = document.getElementById('theme-toggle');
+                const body = document.body;
+
+                // Check for saved theme in localStorage
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme) {
+                    body.classList.add(savedTheme);
+                    themeToggle.textContent = savedTheme === 'dark-mode' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+                }
+
+                themeToggle.addEventListener('click', function () {
+                    if (body.classList.contains('dark-mode')) {
+                        body.classList.remove('dark-mode');
+                        localStorage.setItem('theme', '');
+                        themeToggle.textContent = 'Switch to Dark Mode';
+                    } else {
+                        body.classList.add('dark-mode');
+                        localStorage.setItem('theme', 'dark-mode');
+                        themeToggle.textContent = 'Switch to Light Mode';
+                    }
+                });
+            });
+        </script>
+    </body>
+       <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const quantitySelect = document.getElementById('quantity-select');
+                const totalPriceElement = document.getElementById('total-price');
+                const pricePerItem = 25; // Base price of the product
+        
+                // Update total price when quantity changes
+                quantitySelect.addEventListener('change', function () {
+                    const quantity = parseInt(quantitySelect.value, 10);
+                    const totalPrice = pricePerItem * quantity;
+                    totalPriceElement.textContent = `$${totalPrice}`;
+                });
+            });
+        </script>
+        <script>
+            document.getElementById('multi-payment-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                alert('Payment processed successfully!');
+                // Integrate with payment gateway APIs here
+            });
+        
+            // Example for PayPal Button
+            document.getElementById('paypal-button').addEventListener('click', function () {
+                alert('Redirecting to PayPal...');
+                // Redirect to PayPal or integrate PayPal SDK
+            });
+        
+            // Example for Apple Pay Button
+            document.getElementById('apple-pay-button').addEventListener('click', function () {
+                alert('Apple Pay is not yet integrated.');
+                // Integrate Apple Pay SDK here
+            });
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const albumButtons = document.querySelectorAll('.select-album');
+                const selectedAlbumInput = document.getElementById('selected-album');
+                const albumPriceInput = document.getElementById('album-price');
+        
+                // Add event listeners to album buttons
+                albumButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        const albumName = this.getAttribute('data-album-name');
+                        const albumPrice = this.getAttribute('data-album-price');
+        
+                        // Update payment form with selected album details
+                        selectedAlbumInput.value = albumName;
+                        albumPriceInput.value = `$${albumPrice}`;
+                    });
+                });
+        
+                // Handle payment form submission
+                document.getElementById('multi-payment-form').addEventListener('submit', function (event) {
+                    event.preventDefault();
+        
+                    const albumName = selectedAlbumInput.value;
+                    const albumPrice = albumPriceInput.value;
+        
+                    if (!albumName || !albumPrice) {
+                        alert('Please select an album before proceeding to payment.');
+                        return;
+                    }
+        
+                    alert(`Processing payment for ${albumName} (${albumPrice})...`);
+                    // Integrate with payment gateway API here
+                });
+            });
+        </script>
+        
+
+
+    </body>
+</html>

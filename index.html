@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="images/Black And White Professional Music Logo.png">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Johnson's Records</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/slick.css"/>
+    <link href="css/tooplate-little-fashion.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'OldFashion';
+            src: url('fonts/OldEnglishTextMT.woff2') format('woff2'),
+                 url('fonts/OldEnglishTextMT.woff') format('woff');
+        }
+        * {
+            font-family: 'OldFashion', serif;
+        }
+        body {
+            background: linear-gradient(135deg, #d3f7d9, #55be55, #2bff00);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            color: #ffffff;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        body.dark-mode a {
+            color: #bb86fc;
+        }
+        body.dark-mode .navbar, 
+        body.dark-mode .site-footer {
+            background-color: hsl(0, 0%, 0%);
+        }
+        body.dark-mode .btn {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .nav-link i {
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+        /* Slide-in animation */
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .slide-left { animation: slideInLeft 1s ease-in-out; }
+        .slide-right { animation: slideInRight 1s ease-in-out; }
+        /* Make top images small and responsive */
+        .slick-custom img.img-fluid {
+            max-width: 180px;
+            height: auto;
+            border-radius: 12px;
+            margin: 0 auto;
+            display: block;
+        }
+        .slick-bottom {
+            padding-top: 10px;
+        }
+        /* Reduce lag by disabling heavy box-shadows and transitions */
+        * {
+            box-shadow: none !important;
+            transition: none !important;
+        }
+        /* Featured product images */
+        .product-image {
+            max-width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        /* View All Products button */
+        .view-all {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin: 30px 0 0 0;
+            padding: 12px 0;
+            background: #ffffff;
+            color: #fff;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .view-all:hover {
+            background: #1dff2f;
+            color: #fff;
+        }
+        /* Remove margin from last featured product */
+        .featured-product .col-lg-4:last-child {
+            margin-bottom: 0;
+        }
+        /* Footer fix */
+        .site-footer {
+            background: #1f1f1f;
+            color: #fff;
+            padding: 40px 0 20px 0;
+        }
+        .site-footer a {
+            color: #bb86fc;
+        }
+        .mode-toggle {
+            margin-bottom: 20px;
+        }
+        /* Hide unused iframe */
+        #audio-frame {
+            display: none;
+        }
+    </style>
+    <!-- ...existing code... -->
+<style>
+    /* ...existing styles... */
+    .navbar {
+        padding-top: 0.25rem !important;
+        padding-bottom: 0.25rem !important;
+        min-height: 40px !important;
+    }
+    .navbar .nav-link i {
+        font-size: 1.1rem !important;
+    }
+    .navbar .nav-link {
+        padding: 0.25rem 0.5rem !important;
+        font-size: 0.95rem !important;
+    }
+    .navbar-brand {
+        font-size: 1.1rem !important;
+        padding: 0.1rem 0.5rem !important;
+    }
+    .navbar-toggler {
+        padding: 0.15rem 0.4rem !important;
+        font-size: 1rem !important;
+    }
+</style>
+<!-- ...existing code... -->
+<style>
+.user-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #16026e;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-left: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: #fff;
+    color: #333;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 1000;
+    min-width: 120px;
+}
+.user-dropdown button {
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 10px 16px;
+    text-align: left;
+    color: #333;
+    cursor: pointer;
+}
+.user-circle:hover .user-dropdown,
+.user-circle:focus-within .user-dropdown {
+    display: block;
+}
+</style>
+<!-- ...existing code... -->
+</head>
+<body>
+    <section class="preloader">
+        <div class="spinner">
+            <span class="sk-inner-circle"></span>
+        </div>
+    </section>
+    <main>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <strong><span></span> </strong>
+                </a>
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi-house"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi-book"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html"><i class="bi-shop"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html"><i class="bi-question-circle"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi-telephone"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="sign-up.html"><i class="bi-person-plus"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="CHeckout page.html"><i class="bi-cart-check"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="sign-in.html"><i class="bi-people-circle"></i></a></li>
+                    <li class="nav-item" id="user-nav-placeholder"></li>
+                </ul>
+            </div>
+        </nav>
+        <section class="slick-fade in">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    <!-- Bruno Mars -->
+                    <div class="col-md-4 col-12 text-center mb-4">
+                        <img src="images/bruno mars.jpg" class="img-fluid" alt="Bruno Mars">
+                        <h5 class="mt-3">Bruno Mars</h5>
+                        <p class="small">Bruno Mars, born Peter Gene Hernandez, is a multi-talented American singer, songwriter, musician, and record producer known for his dynamic stage presence and genre-blending music.</p>
+                        <a href="products.html" class="btn btn-sm custom-btn">Check out his music</a>
+                    </div>
+                    <!-- Stevie Wonder -->
+                    <div class="col-md-4 col-12 text-center mb-4">
+                        <img src="images/stevie wonder.jpg" class="img-fluid" alt="Stevie Wonder">
+                        <h5 class="mt-3">Stevie Wonder</h5>
+                        <p class="small">Stevie Wonder, born Stevland Hardaway Judkins, is a legendary American singer, songwriter, and multi-instrumentalist whose innovative approach to music has shaped the industry for decades.</p>
+                        <a href="products.html" class="btn btn-sm custom-btn">Check out his music</a>
+                    </div>
+                    <!-- Aretha Franklin -->
+                    <div class="col-md-4 col-12 text-center mb-4">
+                        <img src="images/aretha franklin.jpg" class="img-fluid" alt="Aretha Franklin">
+                        <h5 class="mt-3">Aretha Franklin</h5>
+                        <p class="small">Aretha Franklin, often hailed as the "Queen of Soul," was an American singer, songwriter, and pianist whose powerful voice and emotive performances left an indelible mark on music history.</p>
+                        <a href="products.html" class="btn btn-sm custom-btn">Check out her music</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="mb-5">Get started with <span>Johnson's</span> Records</h2>
+                    </div>
+                    <div class="col-lg-2 col-12 mt-auto mb-auto slide-left">
+                        <ul class="nav nav-pills mb-5 mx-auto justify-content-center align-items-center" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Introduction</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-youtube-tab" data-bs-toggle="pill" data-bs-target="#pills-youtube" type="button" role="tab" aria-controls="pills-youtube" aria-selected="true">Example</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-skill-tab" data-bs-toggle="pill" data-bs-target="#pills-skill" type="button" role="tab" aria-controls="pills-skill" aria-selected="false">Capabilities</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-10 col-12 slide-right">
+                        <div class="tab-content mt-2" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                <div class="row">
+                                    <div class="col-lg-7 col-12">
+                                        <img src="images/Black And White Professional Music Logo.png" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="col-lg-5 col-12">
+                                        <div class="d-flex flex-column h-100 ms-lg-4 mt-lg-0 mt-5">
+                                            <h4 class="mb-3">Good <span>Design</span> <br>Ideas for <span>your</span> fashion</h4>
+                                            <p>Johnson's Records is a fresh and vibrant music company dedicated to delivering the finest soul pop music to its audience.</p>
+                                            <p>Their mission is to bring joy and connection through music, fostering a community of soul pop enthusiasts.</p>
+                                            <div class="mt-2 mt-lg-auto">
+                                                <a href="products.html" class="custom-link mb-2">
+                                                    On a mission to make sure you find the right music for you!!!
+                                                    <i class="bi-arrow-right ms-2"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-youtube" role="tabpanel" aria-labelledby="pills-youtube-tab">
+                                <div class="row">
+                                    <div class="col-lg-7 col-12">
+                                        <div class="ratio ratio-16x9">
+                                            <img src="images/uptown-900x599.png" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-12">
+                                        <div class="d-flex flex-column h-100 ms-lg-4 mt-lg-0 mt-5">
+                                            <h4 class="mb-3">Example</h4>
+                                            <p>"Uptown Funk," performed by Bruno Mars and produced by Mark Ronson, is a vibrant and infectious funk-pop anthem released in 2014.</p>
+                                            <p>The song blends retro funk influences with modern production, featuring catchy lyrics, groovy beats, and a playful energy that celebrates style, confidence, and fun</p>
+                                            <div class="mt-2 mt-lg-auto">
+                                                <a href="https://www.youtube.com/watch?v=OPf0YbXqDm0&t=13s" class="custom-link mb-2">
+                                                    Watch the video for more
+                                                    <i class="bi-arrow-right ms-2"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-skill" role="tabpanel" aria-labelledby="pills-skill-tab">
+                                <div class="row">
+                                    <div class="col-lg-7 col-12">
+                                        <img src="images/Free Help Ukraine Peace Instagram Post.png" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="col-lg-5 col-12">
+                                        <div class="d-flex flex-column h-50 ms-lg-4 mt-lg-0 mt-5">
+                                            <h4 class="mb-3">What can help you?</h4>
+                                            <p>Over the beginning of the company, We’ve had the chance on improvements</p>
+                                            <div class="skill-thumb mt-3">
+                                                <strong>Branding</strong>
+                                                <span class="float-end">90%</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                                                </div>
+                                                <strong>Design & Stragety</strong>
+                                                <span class="float-end">70%</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+                                                </div>
+                                                <strong>Online Platform</strong>
+                                                <span class="float-end">80%</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-2 mt-lg-auto">
+                                                <a href="products.html" class="custom-link mb-2">
+                                                    Explore products
+                                                    <i class="bi-arrow-right ms-2"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="featured-product section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="mb-5"><span>Featured Artists</span></h2>
+                    </div>
+                    <div class="col-lg-4 col-12 mb-3">
+                        <div class="product-thumb">
+                            <a href="#">
+                                <img src="images/24k.jpg" class="img-fluid product-image" alt="">
+                            </a>
+                            <div class="product-top d-flex">
+                                <span class="product-alert me-auto">24k Magic</span>
+                                <a href="#" class="bi-heart-fill product-icon"></a>
+                            </div>
+                            <div class="product-info d-flex">
+                                <div>
+                                    <h5 class="product-title mb-0">
+                                        <a href="#" class="product-title-link">Bruno Mars</a>
+                                    </h5>
+                                    <p class="product-p">A funky pop song just for you!</p>
+                                </div>
+                                <small class="product-price text-muted ms-auto mt-auto mb-5">$25</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12 mb-3">
+                        <div class="product-thumb">
+                            <a href="#">
+                                <img src="images/supersitions.jpg" class="img-fluid product-image" alt="">
+                            </a>
+                            <div class="product-top d-flex">
+                                <span class="product-alert">Superstitions</span>
+                                <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
+                            </div>
+                            <div class="product-info d-flex">
+                                <div>
+                                    <h5 class="product-title mb-0">
+                                        <a href="#" class="product-title-link">Stevie Wonder</a>
+                                    </h5>
+                                    <p class="product-p">Music from the heart</p>
+                                </div>
+                                <small class="product-price text-muted ms-auto mt-auto mb-5">$35</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12 mb-3">
+                        <div class="product-thumb">
+                            <a href="#">
+                                <img src="images/chains of fools.jpg" class="img-fluid product-image" alt="">
+                            </a>
+                            <div class="product-top d-flex">
+                                <a href="#" class="bi-heart-fill product-icon ms-auto">Chain of fools</a>
+                            </div>
+                            <div class="product-info d-flex">
+                                <div>
+                                    <h5 class="product-title mb-0">
+                                        <a href="product-detail.html" class="product-title-link">Aretha franklin</a>
+                                    </h5>
+                                    <p class="product-p">The queen herself singing with grace</p>
+                                </div>
+                                <small class="product-price text-muted ms-auto mt-auto mb-5">$45</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <a href="products.html" class="view-all">View All Products</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <audio id="background-music" autoplay loop>
+            <source src="audio/Bruno Mars - Finesse (Remix) (feat. Cardi B) (Official Music Video).mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </main>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-10 me-auto mb-4">
+                    <h4 class="text-white mb-3"><a href="index.html">Johnson's</a> Records</h4>
+                </div>
+                <div class="mode-toggle">
+                    <button id="theme-toggle" class="btn btn-outline-light">Switch to Dark Mode</button>
+                </div>
+                <iframe src="audio-player.html" style="display: none;" id="audio-frame"></iframe>
+                <p class="copyright-text text-muted mt-lg-5 mb-4 mb-lg-0">Copyright © 2022 <strong>Johnson's Record</strong></p>
+                <br>
+                <p class="copyright-text">Designed by <a href="#" target="_blank">Akram Abdulle</a></p>
+                <div class="col-lg-5 col-8">
+                    <h5 class="text-white mb-3">Sitemap</h5>
+                    <ul class="footer-menu d-flex flex-wrap">
+                        <li class="footer-menu-item"><a href="about.html" class="footer-menu-link">Story</a></li>
+                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Products</a></li>
+                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Privacy policy</a></li>
+                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">FAQs</a></li>
+                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-4">
+                    <h5 class="text-white mb-3">Social</h5>
+                    <ul class="social-icon">
+                        <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+                        <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+                        <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+                        <li><a href="#" class="social-icon-link bi-skype"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/Headroom.js"></script>
+    <script src="js/jQuery.headroom.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                body.classList.add(savedTheme);
+                themeToggle.textContent = savedTheme === 'dark-mode' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+            }
+            themeToggle.addEventListener('click', function () {
+                if (body.classList.contains('dark-mode')) {
+                    body.classList.remove('dark-mode');
+                    localStorage.setItem('theme', '');
+                    themeToggle.textContent = 'Switch to Dark Mode';
+                } else {
+                    body.classList.add('dark-mode');
+                    localStorage.setItem('theme', 'dark-mode');
+                    themeToggle.textContent = 'Switch to Light Mode';
+                }
+            });
+        });
+    </script>
+   
+</script>
+</body>
+</html>
